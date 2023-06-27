@@ -1,7 +1,7 @@
-import ExtenseList from "./components/ExpenseList";
+import Expenses from "./components/Expenses";
 
 function App() {
-  const expensesInfo = [
+  const expenses = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -29,57 +29,9 @@ function App() {
   ];
   return (
     <div>
-      <h2>Tilki ne sogodni</h2>
-      <ExtenseList
-        title={expensesInfo[0].title}
-        amount={expensesInfo[0].amount}
-        date={expensesInfo[0].date}
-      />
-      <ExtenseList
-        title={expensesInfo[1].title}
-        amount={expensesInfo[1].amount}
-        date={expensesInfo[1].date}
-      />
-      <ExtenseList
-        title={expensesInfo[2].title}
-        amount={expensesInfo[2].amount}
-        date={expensesInfo[2].date}
-      />
-      <ExtenseList
-        title={expensesInfo[3].title}
-        amount={expensesInfo[3].amount}
-        date={expensesInfo[3].date}
-      />
+      <Expenses items={expenses} />
     </div>
-  );
-}
+  )
+};
 
 export default App;
-
-// Альтернативний варіант використання пропсів
-
-//  <div>
-//       <h2>Tilki ne sogodni</h2>
-//       <ExtenseList
-//         title={expensesInfo[0].title}
-//         amount={expensesInfo[0].amount}
-//         date={expensesInfo[0].date}
-//       />
-//       <ExtenseList
-//         title={expensesInfo[1].title}
-//         amount={expensesInfo[1].amount}
-//         date={expensesInfo[1].date}
-//       />
-//       <ExtenseList
-//         title={expensesInfo[2].title}
-//         amount={expensesInfo[2].amount}
-//         date={expensesInfo[2].date}
-//       />
-//       <ExtenseList
-//         title={expensesInfo[3].title}
-//         amount={expensesInfo[3].amount}
-//         date={expensesInfo[3].date}
-//       />
-//     </div>
-//   );
-// }
