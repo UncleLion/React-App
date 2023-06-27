@@ -3,7 +3,7 @@ import './Expenses.css'
 
 
 function Expenses(props) {
-  return <div>
+  return <div className="expenses">
       <h2>Tilki ne sogodni</h2>
       <ExpenseList
         title={props.items[0].title}
