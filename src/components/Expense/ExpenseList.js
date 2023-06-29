@@ -3,6 +3,11 @@ import ExpenseDate from "./ExpenseDate"
 import "./ExpenseList.css"
 
 export default function ExpenseList(props) {
+    const clickHandler = () => {
+        console.log('It`s Working')
+        ("Welcome")
+    }
+
     return (
         <Card className="expense-list"> 
             <ExpenseDate  date={props.date}/>
@@ -10,6 +15,7 @@ export default function ExpenseList(props) {
                 <h2>{props.title}</h2>
                 <div className="expense-list__price">${props.amount}</div>
             </div>
+            <button onClick={clickHandler} >Press me</button>
         </Card>
     )
 }
