@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import './ExpenseForm.css'
-export default function ExpenseForm() {
+export default function ExpenseForm(props) {
 
     const [newTitle, setNewTitle] = useState(' ')
     const [newAmount, setNewAmount] = useState(' ')
@@ -26,7 +26,7 @@ export default function ExpenseForm() {
         const submitHandler = {
         title: newTitle,
         amount: newAmount,
-        date: Date(newDate)
+        date: new Date(newDate)
     }
         console.log(submitHandler)
         setNewTitle("")
