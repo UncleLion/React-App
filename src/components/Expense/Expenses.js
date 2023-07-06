@@ -1,10 +1,21 @@
+import ExpensesFilter from "./ExpenseForm/ExpensesFilter";
 import ExpenseList from "./ExpenseList"
+import Card from "../UI/Card";
 import './Expenses.css'
+import { useState } from "react";
 
 
-function Expenses(props) {
-  return <div className="expenses">
-      <h2>Tilki ne sogodni</h2>
+export default function Expenses(props) {
+
+  const [changeFilter, setChangeFilter] = useState("2020")
+  const filterChangeHandler = choiceYear => {
+    setChangeFilter(choiceYear)
+  }
+
+  return (
+    <div>
+      <Card className="expenses">
+      <ExpensesFilter  selected={changeFilter} onChangeFilter={filterChangeHandler} />
       <ExpenseList
         title={props.items[0].title}
         amount={props.items[0].amount}
@@ -24,8 +35,10 @@ function Expenses(props) {
         title={props.items[3].title}
         amount={props.items[3].amount}
         date={props.items[3].date}
-      />
-    </div>
+        />
+      </Card>
+  </div>
+  )
 }
+
   
-export default Expenses;
