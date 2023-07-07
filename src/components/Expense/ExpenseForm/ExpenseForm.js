@@ -24,11 +24,11 @@ export default function ExpenseForm(props) {
         event.preventDefault()
         
         const submitHandler = {
-        title: newTitle,
-        amount: newAmount,
-        date: new Date(newDate)
+            title: newTitle,
+            amount: newAmount,
+            date: new Date(newDate)
     }
-        console.log(submitHandler)
+        props.onSaveExpenseData(submitHandler)
         setNewTitle("")
         setNewAmount("")
         setNewDate("")
